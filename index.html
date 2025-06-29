@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Совет дня</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="icon" type="image/png" sizes="32x32" href="flower.png">
+</head>
+<body>
+    <div class="container">
+        <h1>Совет дня</h1>
+        <div class="categories">
+            <button class="category-btn active" data-category="all">Все</button>
+            <button class="category-btn" data-category="health">Здоровье и спорт</button>
+            <button class="category-btn" data-category="money">Финансы</button>
+            <button class="category-btn" data-category="life">Жизнь</button>
+        <div class="advice-container">
+            <p id="advice">Нажмите кнопку, чтобы получить совет</p>
+        </div>
+
+        <div class="buttons">
+            <button id="generate-btn">Получить совет</button>
+            <button id="history-btn">История советов</button>
+        </div>
+
+        <div class="history" id="history-section">
+            <h3>Последние 5 советов:</h3>
+            <ul id="history-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

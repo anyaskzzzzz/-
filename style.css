@@ -1,0 +1,255 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+    url('./pink.jpg') center/cover no-repeat fixed;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #ab2c61;
+  line-height: 1.6;
+}
+
+.container {
+  background: #fac5db;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+h1 {
+  color: #ab2c61;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  position: relative;
+  display: inline-block;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #ab2c61;
+  border-radius: 3px;
+}
+
+.category-btn {
+  background: #e384ab;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.category-btn:hover {
+  background: #ab2c61;
+}
+
+.category-btn.active {
+  background: #ab2c61;
+  color: white;
+  transform: scale(1.05);
+}
+
+.advice-container {
+  min-height: 150px;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #ffe0ed;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.advice-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #ab2c61;
+}
+
+#advice {
+  font-size: 1.3rem;
+  opacity: 0;
+  margin: 0;
+  transition: all 0.5s ease;
+  font-weight: 500;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+#generate-btn, #history-btn {
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+#generate-btn {
+  background: #db84a4;
+  color: white;
+  box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2);
+}
+
+#generate-btn:hover {
+  background: #a34561;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(52, 152, 219, 0.3);
+}
+
+#history-btn {
+  background: #f79cb7;
+  color: white;
+  box-shadow: 0 4px 6px rgba(149, 165, 166, 0.2);
+}
+
+#history-btn:hover {
+  background: #bf7188;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(149, 165, 166, 0.3);
+}
+
+.history {
+  margin-top: 1rem;
+  text-align: left;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  background: #fad4e2;
+  border-radius: 10px;
+  padding: 0 20px;
+}
+
+.history.visible {
+  max-height: 500px;
+  opacity: 1;
+  padding: 20px;
+  margin-top: 1.5rem;
+}
+
+.history h3 {
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+  margin-top: 0;
+  color: #8a4359;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.history h3::before {
+  content: '';
+}
+
+#history-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0;
+}
+#history-list li {
+  padding: 12px 0;
+  border-bottom: 1px dashed #ddd;
+  font-size: 1rem;
+  position: relative;
+  padding-left: 25px;
+  transition: all 0.3s ease;
+}
+#history-list li:hover {
+  color: #663141;
+  transform: translateX(5px);
+}
+
+#history-list li::before {
+  content: '•';
+  color: #6b243a;
+  font-weight: bold;
+  position: absolute;
+  left: 5px;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s forwards;
+}
+
+
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #generate-btn, #history-btn {
+    width: 100%;
+  }
+
+  .advice-container {
+    min-height: 120px;
+    padding: 15px;
+  }
+
+  #advice {
+    font-size: 1.1rem;
+  }
+}
